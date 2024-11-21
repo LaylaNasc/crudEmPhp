@@ -88,7 +88,12 @@
     <title>Primeiro Crud</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
+<header class="bg-dark text-white py-3">
+    <div class="container text-center">
+        <h1 class="h4 mb-0">Sistema de Gerenciamento</h1>
+    </div>
+</header>
     <div class="container mt-5">
     <h1 class="text-center mb-3">Cadastro de Clientes</h1>
         <a href="clientes.php" class="btn btn-dark mb-4">Voltar para a lista</a>
@@ -107,7 +112,7 @@
             </div>
             <div class="col-md-6">
                 <label for="senha" class="form-label">Senha:</label>
-                <input value="<?php if(isset($_POST['senha'])) echo $_POST['senha'];?>" name="senha" type="text" class="form-control" id="senha">
+                <input value="<?php if(isset($_POST['senha'])) echo $_POST['senha'];?>" name="senha" type="password" class="form-control" id="senha">
             </div>
             <div class="col-md-6">
                 <label for="foto" class="form-label">Foto do Usuário:</label>
@@ -133,6 +138,10 @@
             </div>
         </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></script>
+    <footer class="bg-dark text-white py-3 mt-auto">
+        <div class="text-center">
+            <p class="mb-0">Desenvolvido por Layla</p>
+        </div>
+    </footer>
 </body>
 </html>

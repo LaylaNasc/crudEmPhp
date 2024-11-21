@@ -11,6 +11,7 @@ if(!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 include('lib/conexao.php');
 include('lib/upload.php');
 
+
 $id = intval($_GET['id']);
 function limparTexto($str) {
     return preg_replace("/[^0-9]/", "", $str);
@@ -60,17 +61,18 @@ if (count($_POST) > 0) {
         }
     }
 
-    if(isset($_FILES['foto'])) {
+    if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
+        if (!empty($_POST['fotoAntiga'])) {
+            unlink($_POST['fotoAntiga']); 
+        }
+
         $arq = $_FILES['foto'];
         $path = enviarArquivo($arq['error'], $arq['size'], $arq['name'], $arq['tmp_name']);
-        if($path == false)
-            $erro = "Falha ao enviar arquivo. Tente novamente";
-        else
-            $sqlCodeExtra .= " foto = '$path', ";
-    
-        if(!empty($_POST['fotoAntiga']))
-            unlink($_POST['fotoAntiga']);
-
+        if ($path === false) {
+            $erro = "Falha ao enviar arquivo. Tente novamente.";
+        } else {
+            $sqlCodeExtra .= " foto = '$path', "; 
+        }
     }
 
     if($erro) {
@@ -94,7 +96,6 @@ if (count($_POST) > 0) {
 
 }
 
-
 $sqlClientes = "SELECT * FROM clientes WHERE id = $id";
 $queryCliente = $mysqli->query($sqlClientes) or die($mysqli->error);
 $cliente = $queryCliente->fetch_assoc();
@@ -108,7 +109,12 @@ $cliente = $queryCliente->fetch_assoc();
     <title>Primeiro Crud</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
+<header class="bg-dark text-white py-3">
+    <div class="container text-center">
+        <h1 class="h4 mb-0">Sistema de Gerenciamento</h1>
+    </div>
+</header>
     <div class="container mt-5">
         <h1 class="text-center mb-3">Atualizar dados do cliente</h1>
         <a href="clientes.php" class="btn btn-dark mb-4">Voltar para a lista</a>
@@ -157,11 +163,15 @@ $cliente = $queryCliente->fetch_assoc();
                     <label class="form-check-label" for="cliente">Cliente</label>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 py-">
                 <button name="submit" class="btn btn-dark">Enviar</button>
             </div>
         </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></script>
+    <footer class="bg-dark text-white py-3 mt-auto">
+        <div class="text-center">
+            <p class="mb-0">Desenvolvido por Layla</p>
+        </div>
+    </footer>
 </body>
 </html>

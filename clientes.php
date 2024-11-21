@@ -10,16 +10,24 @@ if(!isset($_SESSION['usuario'])) {
     die();
 }
  
-
 $id = $_SESSION['usuario'];
+
+$sqlUsuario = "SELECT nome, admin FROM clientes WHERE id = '$id'";
+$queryUsuario = $mysqli->query($sqlUsuario) or die($mysqli->error);
+$usuario = $queryUsuario->fetch_assoc();
+
+if (!$usuario) {
+    header("Location: logout.php");
+    die();
+}
+
+$nomeUsuario = $usuario['nome']; 
+$isAdmin = $usuario['admin'];   
 
 $sqlClientes =  "SELECT * FROM clientes WHERE id != '$id'";
 $queryClientes = $mysqli->query($sqlClientes) or die($mysqli->error);
 $numClientes = $queryClientes->num_rows;
-?>
 
-<?php
-if (!isset($_SESSION)) session_start();
 ?>
 
 <!DOCTYPE html>
@@ -30,8 +38,16 @@ if (!isset($_SESSION)) session_start();
     <title>Lista de Clientes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body class="bg-light">
-    <div class="container my-5">
+<body class="bg-light d-flex flex-column" style="min-height: 100vh;">
+    <header class="bg-dark text-light py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 mb-0">
+                Bem-vindo(a), <?php echo htmlspecialchars($nomeUsuario); ?>!
+            </h1>
+            <a href="logout.php" class="btn btn-outline-light btn-sm">Sair</a>
+        </div>
+    </header>
+    <div class="container my-5 flex-grow-1">
         <h1 class="text-center mb-3">Lista de clientes</h1>
         <?php if($_SESSION['admin']) { ?>
         <p class="text-muted fw-bold mb-1 fs-4">Estes são os clientes cadastrados no sistema:</p>
@@ -95,11 +111,12 @@ if (!isset($_SESSION)) session_start();
                     } ?>
                 </tbody>
             </table>
-        </div>
-        <div class="text-end">
-            <a href="logout.php" class="btn btn-dark">Sair</a>
-        </div>
+        </div>       
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-rMO8IuQs2KnQeOKLAxRS1Or7ZrMfbaoknxPZy05E67hNsRZn/ERDpxTLFvTY/lTZ" crossorigin="anonymous"></script>
+    <footer class="bg-dark text-white py-3 container-fluid mt-auto">
+        <div class="text-center">
+            <p class="mb-0">Desenvolvido por Layla</p>
+        </div>
+    </footer>
 </body>
 </html>
