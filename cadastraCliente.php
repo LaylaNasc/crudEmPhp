@@ -90,6 +90,7 @@
 </head>
 <body>
     <div class="container mt-5">
+    <h1 class="text-center mb-3">Cadastro de Clientes</h1>
         <a href="clientes.php" class="btn btn-dark mb-4">Voltar para a lista</a>
         <form enctype="multipart/form-data" method="POST" action="cadastraCliente.php" class="row g-3">
             <div class="col-md-6">
