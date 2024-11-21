@@ -30,26 +30,26 @@ de login e CRUD completo para gerenciamento de [dados]. Através deste projeto, 
 
 <h4>Tela de login:<h4>  
 <div style="display: flax; justify-content: space-aroud;">
-<img src="https://github.com/user-attachments/assets/bd87580e-a20f-425f-9434-3f8385506b6a" alt="telaDeLogin" width="300" heihth="200">
+<img src="https://github.com/user-attachments/assets/b8d7f06a-f2c1-4726-bb91-90e7bb5752d9" alt="telaDeLogin" width="300" heihth="200">
 
 <h4>Tela de listar clientes apresentada ao admin:<h4>  
 <div style="display: flax; justify-content: space-aroud;">
-<img src="https://github.com/user-attachments/assets/9a06f4c2-47dd-4d80-90eb-34b564321db3" alt="telaDeListar" width="300" heihth="200">
+<img src="https://github.com/user-attachments/assets/8ad688a3-b390-44b8-aa3b-864ae396f7a7" alt="telaDeListar" width="300" heihth="200">
 
 <h4>Tela de cadastro:<h4>  
 <div style="display: flax; justify-content: space-aroud;">
-<img src="https://github.com/user-attachments/assets/a1dce03b-1cbc-43ed-9bd7-c2b9653b03f1" alt="telaDeCadastro" width="300" heihth="200">
+<img src="https://github.com/user-attachments/assets/2aa083f3-4127-44d9-aed4-da61dce1b577" alt="telaDeCadastro" width="300" heihth="200">
 
 <h4>Tela de atualizar:<h4>  
 <div style="display: flax; justify-content: space-aroud;">
-<img src="https://github.com/user-attachments/assets/81165599-d9e3-4cc5-b23c-d61de5934443" alt="telaDeAtualizar" width="300" heihth="200">  
+<img src="https://github.com/user-attachments/assets/4009cfe2-3fab-4a92-a6f8-5b3912139b13" alt="telaDeAtualizar" width="300" heihth="200">  
 
 <h4>Tela de deletar:<h4>  
 <div style="display: flax; justify-content: space-aroud;">
-<img src="https://github.com/user-attachments/assets/b990ecd4-b4b6-4443-8357-bd8f8a557171" alt="telaDeDeletar" width="300" heihth="200">
+<img src="https://github.com/user-attachments/assets/f7baa173-1bd9-4095-bd07-73131bb38184" alt="telaDeDeletar" width="300" heihth="200">
 
 <h4>Tela de listar apresentada ao cliente:<h4>  
 <div style="display: flax; justify-content: space-aroud;">
-<img src="https://github.com/user-attachments/assets/7186b0e0-64b8-4a33-baeb-50bb5f5c094a" alt="telaDeLogin" width="300" heihth="200">
+<img src="https://github.com/user-attachments/assets/93698ac9-9819-48c3-8466-869e63011ab3" alt="telaDeLogin" width="300" heihth="200">
 
 
