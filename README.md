@@ -42,7 +42,7 @@ de login e CRUD completo para gerenciamento de [dados]. Através deste projeto, 
 
 <h4>Tela de atualizar:<h4>  
 <div style="display: flax; justify-content: space-aroud;">
-<img src="https://github.com/user-attachments/assets/8639609b-2663-4fdf-be71-4ab020673a21" alt="telaDeAtualizar" width="300" heihth="200">  
+<img src="https://github.com/user-attachments/assets/81165599-d9e3-4cc5-b23c-d61de5934443" alt="telaDeAtualizar" width="300" heihth="200">  
 
 <h4>Tela de deletar:<h4>  
 <div style="display: flax; justify-content: space-aroud;">
