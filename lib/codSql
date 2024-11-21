@@ -1,0 +1,17 @@
+-- Estrutura da tabela `clientes`
+-- Banco foi criado no phpMyAdmin 
+
+
+DROP TABLE IF EXISTS `clientes`;
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `foto` varchar(100) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `telefone` varchar(11) DEFAULT NULL,
+  `nascimento` date DEFAULT NULL,
+  `data` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `admin` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
